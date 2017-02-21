@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+{{> full-header }}
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 single-content">
+            <p class="meta">
+                   {{! Everything inside the #author tags pulls data from the author }}
+                {{#author}}
+                    <a href="{{url}}">{{name}}</a>
+                {{/author}}
+                {{tags prefix=" in "}}
+                <i class="link-spacer"></i>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM YYYY"}}</time>
+            </p>
+
+            <h1>{{title}}</h1>
+
+           {{content}}
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+<footer class="single">
+    {{> post-footer}}
+</footer>
+
+
+{{/post}}

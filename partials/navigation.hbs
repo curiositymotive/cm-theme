@@ -1,0 +1,10 @@
+<div id="menu-target">
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+        <li><a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">RSS Feed</a></li>
+    </ul>
+</div>
+
+

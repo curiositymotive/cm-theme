@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+
+                {{#if author.image}}
+                    <img src="{{author.image}}" class="user-icon user-1" alt="{{author.name}}">
+                {{else}}
+                    <img src="{{@blog.logo}}" class="user-icon user-1" alt="{{@blog.title}}">
+                {{/if}}
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="category-list">
+                <p>Published <span>{{date format="MMM YYYY"}}</span></p>
+                <p>
+                    {{#author}}
+                    <a href="{{url}}">{{name}}</a>
+                    {{/author}}
+                    {{tags prefix=" in "}}
+                </p>
+            </div>
+        </div><!-- end col -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social">
+                <p>Share this article</a>
+                <div class="social-links">
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="{{excerpt characters="100"}}" data-url="{{url absolute="true"}}"><i class="fa fa-twitter"></i></a>
+
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="{{excerpt characters="100"}}" data-url="{{url absolute="true"}}"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:?body={{url absolute="true"}}"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div>

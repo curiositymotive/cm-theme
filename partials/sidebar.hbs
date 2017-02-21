@@ -1,0 +1,43 @@
+<section class="sidebar col-md-5 col-sm-12"
+
+{{#if author.cover}}
+    style="background-image: url({{author.cover}})"
+{{else}}
+    {{#if tag.image}}
+        style="background-image: url({{tag.image}})"
+    {{else}}
+        {{#if @blog.cover}}
+            style="background-image: url({{@blog.cover}})"
+        {{/if}}
+    {{/if}}
+{{/if}}
+>
+
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+
+    <div class="site-info">
+        <div class="primary-info">
+            {{#is "author"}}
+                <h1>{{ author.name }}</h1>
+            {{else}}
+                {{#is "tag"}}
+                    <h1>{{tag.name}}</h1>
+                    <p>
+                        {{#if tag.description}}
+                            {{tag.description}}
+                        {{else}}
+                        {{plural pagination.total empty='No Posts' singular='% Post' plural='% Posts'}} in Collection
+                        {{/if}}
+                    </p>
+                {{else}}
+                    <h1>{{ @blog.title }}</h1>
+                    <p>{{ @blog.description }}</p>
+                {{/is}}
+            {{/is}}
+        </div>
+    </div>
+</section><!-- end sidebar -->
