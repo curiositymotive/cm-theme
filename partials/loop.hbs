@@ -2,6 +2,7 @@
     {{! This is the post loop - each post will be output using this markup }}
     {{#foreach posts}}
     <article class="post {{#if featured}}post--featured{{/if}}">
+      <img src="{{image}}" />
         <div class="post-preview col-xs-10  no-gutter">
             <h2><a href="{{url}}">{{title}}</a></h2>
 
