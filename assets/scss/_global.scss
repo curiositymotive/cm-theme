@@ -1,0 +1,103 @@
+/* Global */
+
+.left-container {
+  margin-left: 15px;
+  padding-left: 0;
+  @include breakpoint(only-sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-gutter-left {
+  padding-left: 0;
+}
+
+.no-gutter-right {
+  padding-right: 0;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  @include breakpoint(md) {
+    height: 100%;
+  }
+}
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+.nnn {
+  padding: 25px;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #252525;
+
+  .nnnlogo {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+
+    .rbf {
+      fill: $brand-color;
+    }
+
+    .wf {
+      fill: #ffffff;
+    }
+  }
+}
+
+.ccclogo {
+  display: block;
+  max-width: 50%;
+  width: 50%;
+  margin: 0 auto;
+
+  .rbf {
+    fill: $brand-color;
+  }
+
+  .wf {
+    fill: #ffffff;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(med) {
+    margin: 0 auto;
+  }
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: #333333;
+    border-bottom: solid 1px #999999;
+  }
+}
