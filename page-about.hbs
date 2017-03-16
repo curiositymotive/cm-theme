@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+
+{{> full-header}}
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 single-content">
+
+            <h1>{{ title }}</h1>
+
+            {{ content }}            
+
+            <hr class="abt"/>
+
+            <h2>Follow us on:</h2>
+
+            <div class="about-social">
+                <ul>
+                    <li><a href="https://www.twitter.com/curiositymotive/"><i class="fa fa-twitter fa-3x"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/curiositymotive/"><i class="fa fa-instagram fa-3x"></i> Instagram</a></li>
+                    <li><a href="https://www.facebook.com/CuriosityMotive/"><i class="fa fa-facebook fa-3x"></i> Facebook</a></li>
+                    <li><a href="https://www.curiositymotive.com/feed.xml"><i class="fa fa-rss fa-3x"></i> RSS</a></li>
+                </ul>
+            </div>
+
+            <hr class="abt"/>
+
+            <h2>Contributors:</h2>
+
+            <div class="contributors">
+              <ul>
+        {{#get "users" limit="all"}}
+          {{#foreach users}}
+            <li><a href="{{url}}">{{name}}</a></li>
+          {{/foreach}}
+        {{/get}}
+    </ul>
+            </div>
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+{{/post}}
+
+<footer class="single single-page">
+    <div class="container">
+        <div class="col-sm-12">
+            <p>{{@blog.description}}</p>
+        </div>
+    </div>
+</footer>
