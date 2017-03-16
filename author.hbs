@@ -16,6 +16,33 @@
                 <div class="author-bio__info">
                     <h1>{{name}}</h1>
 
+                    <ul class="author-links">
+                        {{#if website}}
+                        <li>
+                            <i class="author-link fa fa-link"></i>
+                            <a href="{{website}}">{{website}}</a>
+                        </li>
+                        {{/if}}
+                        {{#if twitter}}
+                        <li>
+                            <i class="author-link fa fa-twitter"></i>
+                            <a href="{{twitter_url}}">{{twitter}}</a>
+                        </li>
+                        {{/if}}
+                        {{#if facebook}}
+                        <li>
+                            <i class="author-link fa fa-facebook"></i>
+                            <a href="{{facebook_url}}">Facebook</a>
+                        </li>
+                        {{/if}}
+                        {{#if twitter}}
+                        <li>
+                            <i class="author-link fa fa-twitter"></i>
+                            <a href="{{twitter_url}}">Twitter</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+
                     {{#if bio}}
                         <p>{{{bio}}}<p>
                     {{/if}}
