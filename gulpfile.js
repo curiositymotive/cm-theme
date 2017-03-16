@@ -1,3 +1,9 @@
+// gulpfile.js
+var requireDir = require('require-dir');
+
+// Require all tasks in gulp/tasks, including subfolders
+requireDir('./gulp/tasks', {recurse: true});
+
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
