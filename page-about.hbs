@@ -35,13 +35,18 @@
             <h2>Contributors:</h2>
 
             <div class="contributors">
-              <ul>
-        {{#get "users" limit="all"}}
-          {{#foreach users}}
-            <li><a href="{{url}}">{{name}}</a></li>
-          {{/foreach}}
-        {{/get}}
-    </ul>
+                <ul>
+                {{#get "users" limit="all"}}
+                    {{#foreach users}}
+                        <li class="ct_single">
+                            <a href="{{url}}">
+                                <img src="{{image}}">
+                                {{name}}
+                            </a>
+                        </li>
+                    {{/foreach}}
+                {{/get}}
+                </ul>
             </div>
 
         </div><!-- main-content/col -->
