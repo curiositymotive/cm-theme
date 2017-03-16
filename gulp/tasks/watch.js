@@ -20,7 +20,7 @@ var messages = {
          }))
          .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
          .pipe(gulp.dest('assets/css')).pipe(gulp.dest('css'))
-         //.pipe(browserSync.reload({stream:true}))
+         //browserSync.reload();
  });
 
 /**
@@ -28,7 +28,7 @@ var messages = {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch-scss', function () {
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['sass']);
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['sass', 'browsersync:reload']);
 });
 
 gulp.task('ghost', ['ghost:start'], function (callback) {  
