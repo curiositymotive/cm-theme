@@ -18,3 +18,15 @@
       </ul>
     </div>
 </div>
+
+<!-- if the user has javascript disabled they can still use the menu -->
+<noscript>
+    <div class="no-js-menu">
+        <ul>
+            {% for page in site.nav_list %}
+                <a href="{{url absolute="true"}}"><i class="fa fa-circle-o"></i> {{label}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</noscript>
+<!-- end no script -->
