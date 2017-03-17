@@ -10,13 +10,21 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="category-list">
-                <p>Published <span>{{date format="MMM YYYY"}}</span></p>
+                <p>Published <span>{{date format="MMM DD YYYY"}}</span></p>
                 <p>
                     {{#author}}
                     <a href="{{url}}">{{name}}</a>
                     {{/author}}
-                    {{tags prefix=" in "}}
                 </p>
+                <div class="other-catergories">
+                    <h3>Found in</h3>
+
+                    <ul>
+                        <li>
+                            {{tags}}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div><!-- end col -->
         <div class="col-xs-12 col-sm-4">
@@ -24,7 +32,6 @@
                 <p>Share this article</a>
                 <div class="social-links">
                     <a class="social-icon" href="#" data-platform="twitter" data-message="{{excerpt characters="100"}}" data-url="{{url absolute="true"}}"><i class="fa fa-twitter"></i></a>
-
                     <a class="social-icon" href="#" data-platform="facebook" data-message="{{excerpt characters="100"}}" data-url="{{url absolute="true"}}"><i class="fa fa-facebook-official"></i></a>
                     <a class="social-icon" data-platform="mail"  href="mailto:?body={{url absolute="true"}}"><i class="fa fa-envelope"></i></a>
                 </div>
