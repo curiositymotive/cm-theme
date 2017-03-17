@@ -71,12 +71,12 @@ var s,
 
             s.jpm = $.jPanelMenu({
                 menu : '#menu-target',
-                trigger: '.menu-trigger',
+                trigger: '.menu-trigger, .menu-triggered',
                 animated: false,
-                openPosition: '200px',
+                openPosition: '250px',
                 beforeOpen : ( function() {
                     if (matchMedia('only screen and (min-width: 992px)').matches) {
-                        $('.sidebar').css("left", "200px");
+                        $('.sidebar').css("left", "250px");
                     }
                 }),
                 beforeClose : ( function() {
