@@ -81,10 +81,33 @@
   border-radius: 50%;
 }
 
-.post-icon {
-  width: 85%;
-  height: 85%;
-  padding: 0;
-  float: right;
-  border-radius: 3%;
+.main-img {
+  display: block;
+
+  .post-icon {
+    display: block;
+    float: right;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    border-radius: 3%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include breakpoint(sm) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include breakpoint(md) {
+      width: 115px;
+      height: 115px;
+    }
+
+    @include breakpoint(lg) {
+      width: 125px;
+      height: 125px;
+    }
+  }
 }
