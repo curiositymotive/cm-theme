@@ -50,8 +50,23 @@
             </div>
             <h2 class="favorites">Latest posts by {{name}} </h2>
             {{/author}}
-            <div class="posts-block animated fadeIn ">
-                {{> "loop"}}
+            <div class="posts-block animated fadeIn author-page">
+                <article class="author-page">
+                <div class="animated fadeIn ">
+                    {{#foreach posts}}
+                    <article class="post {{#if featured}}post--featured{{/if}}">
+                        <div class="post-preview col-xs-12  no-gutter">
+                            <h2><a href="{{url}}">{{title}}</a></h2>
+                            <p>{{excerpt words="28"}}</p>
+                        </div>
+                    </article>
+                    {{/foreach}}
+                </div>
+                </article>
+                <footer class="split-footer">
+                    {{pagination}}
+                </footer>
+
             </div>
         </div><!-- main content -->
     </div> <!--/row -->

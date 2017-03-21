@@ -7409,6 +7409,9 @@ a {
         width: 125px;
         height: 125px; } }
 
+.author-page .post-preview p {
+  margin: 0; }
+
 #menu-target {
   position: absolute !important;
   top: -9999px !important;
