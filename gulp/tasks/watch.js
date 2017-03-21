@@ -31,8 +31,12 @@ gulp.task('watch-scss', function () {
     gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['sass', 'browsersync:reload']);
 });
 
+gulp.task('watch-js', function () {
+    gulp.watch(['assets/js/vendor/*.js', 'assets/js/*.js'], ['browsersync:reload']);
+});
+
 gulp.task('ghost', ['ghost:start'], function (callback) {  
-  gulp.watch('*.hbs', ['browsersync:reload']);
+  gulp.watch(['*.hbs', 'partials/**/*.hbs'], ['browsersync:reload']);
 
   callback();
 });
