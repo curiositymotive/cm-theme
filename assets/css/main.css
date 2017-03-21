@@ -8242,6 +8242,13 @@ form {
         -ms-transform: translateY(-1px);
             transform: translateY(-1px); }
 
+ul.author-links {
+  list-style: none;
+  margin: 0 0 25px 0;
+  padding: 0; }
+  ul.author-links li i {
+    width: 20px; }
+
 .alt-home .sidebar {
   background: none;
   background-color: #f9f9f9;

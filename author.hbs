@@ -17,16 +17,16 @@
                     <h1>{{name}}</h1>
 
                     <ul class="author-links">
+                        {{#if location}}
+                        <li>
+                            <i class="author-link fa fa-globe"></i>
+                            <b>{{location}}</b>
+                        </li>
+                        {{/if}}
                         {{#if website}}
                         <li>
                             <i class="author-link fa fa-link"></i>
                             <a href="{{website}}">{{website}}</a>
-                        </li>
-                        {{/if}}
-                        {{#if twitter}}
-                        <li>
-                            <i class="author-link fa fa-twitter"></i>
-                            <a href="{{twitter_url}}">{{twitter}}</a>
                         </li>
                         {{/if}}
                         {{#if facebook}}
