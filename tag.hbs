@@ -9,11 +9,13 @@
         <div class="col-md-7 col-sm-12 col-md-offset-5 main-content">
 
             <div class="sub-nav">
-                <a href="#" class="select-posts active">Posts</a>
+                <a href="#" class="select-tags active">Tags</a>
             </div>
 
             <div class="category-page-posts animated fadeIn ">
-
+                {{#tag}}
+                    <h2 style="margin-top: 50px; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #ff4500;">{{name}}</h2>
+                {{/tag}}
                 {{! The tag below includes the post loop - partials/loop.hbs }}
                 {{> "loop"}}
             </div>
