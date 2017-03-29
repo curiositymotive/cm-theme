@@ -3,9 +3,14 @@
     {{#foreach posts}}
     <article class="post {{#if featured}}post--featured{{/if}}">
         <div class="post-preview col-xs-9  no-gutter">
-            <h2><a href="{{url}}">{{title}}</a></h2>
-
-            <p>{{excerpt words="28"}}</p>
+            
+            {{#if meta_description}}
+                <h2><a href="{{url}}">{{meta_title}}</a></h2>
+                <p>{{meta_description}}</p>
+            {{else}}
+                <h2><a href="{{url}}">{{title}}</a></h2>
+                <p>{{excerpt words="28"}}</p>
+            {{/if}}
 
             <p class="meta">
                 <i class="fa fa-bolt metaicon"></i> {{#author}}
