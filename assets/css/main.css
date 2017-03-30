@@ -7433,6 +7433,13 @@ a {
     background-position: center center;
     background-repeat: no-repeat; }
 
+.wbline {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  color: #666;
+  border-bottom: 1px solid whitesmoke; }
+
 #menu-target {
   position: absolute !important;
   top: -9999px !important;
