@@ -51,7 +51,7 @@ var s,
             // When Clicked pop up a share dialog
 
             var platform = el.data('platform');
-            var message = el.data('message');a
+            var message = el.data('message');
             var url = el.data('url');
 
             if (platform == 'mail'){
