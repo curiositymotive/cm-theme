@@ -4,11 +4,14 @@
     <article class="post {{#if featured}}post--featured{{/if}}">
         <div class="post-preview col-xs-9  no-gutter">
             
-            {{#if meta_description}}
+            {{#if meta_title}}
                 <h2><a href="{{url}}">{{meta_title}}</a></h2>
-                <p>{{meta_description}}</p>
             {{else}}
                 <h2><a href="{{url}}">{{title}}</a></h2>
+            {{/if}}
+            {{#if meta_description}}
+                <p>{{meta_description}}</p>
+            {{else}}
                 <p>{{excerpt words="28"}}</p>
             {{/if}}
 
