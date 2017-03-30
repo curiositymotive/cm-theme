@@ -16,15 +16,65 @@
                 <div class="author-bio__info">
                     <h1>{{name}}</h1>
 
+                    <ul class="author-links">
+                        {{#if location}}
+                        <li>
+                            <i class="author-link fa fa-globe"></i>
+                            <b>{{location}}</b>
+                        </li>
+                        {{/if}}
+                        {{#if website}}
+                        <li>
+                            <i class="author-link fa fa-link"></i>
+                            <a href="{{website}}">{{website}}</a>
+                        </li>
+                        {{/if}}
+                        {{#if facebook}}
+                        <li>
+                            <i class="author-link fa fa-facebook"></i>
+                            <a href="{{facebook_url}}">Facebook</a>
+                        </li>
+                        {{/if}}
+                        {{#if twitter}}
+                        <li>
+                            <i class="author-link fa fa-twitter"></i>
+                            <a href="{{twitter_url}}">{{twitter}}</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+
                     {{#if bio}}
-                        <p>{{bio}}<p>
+                        <p>{{{bio}}}<p>
                     {{/if}}
                 </div>
             </div>
-            <h2 class="favorites">Latest posts by {{name}} </h2>
+            <h2 class="favorites">Posts by {{name}} </h2>
             {{/author}}
-            <div class="posts-block animated fadeIn ">
-                {{> "loop"}}
+            <div class="posts-block animated fadeIn author-page">
+                <article class="author-page">
+                <div class="animated fadeIn ">
+                    {{#foreach posts}}
+                    <article class="post {{#if featured}}post--featured{{/if}}">
+                        <div class="post-preview col-xs-12  no-gutter">
+                            {{#if meta_title}}
+                                <h2><a href="{{url}}">{{meta_title}}</a></h2>
+                            {{else}}
+                                <h2><a href="{{url}}">{{title}}</a></h2>
+                            {{/if}}
+                            {{#if meta_description}}
+                                <p>{{meta_description}}</p>
+                            {{else}}
+                                <p>{{excerpt words="28"}}</p>
+                            {{/if}}
+                        </div>
+                    </article>
+                    {{/foreach}}
+                </div>
+                </article>
+                <footer class="split-footer">
+                    {{pagination}}
+                </footer>
+
             </div>
         </div><!-- main content -->
     </div> <!--/row -->

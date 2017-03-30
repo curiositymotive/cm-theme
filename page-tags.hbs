@@ -1,17 +1,21 @@
-<section class="sidebar col-md-5 col-sm-12"
+{{!< default}}
 
-{{#if author.cover}}
-    style="background-image: url({{author.cover}})"
-{{else}}
-    {{#if tag.image}}
-        style="background-image: url({{tag.image}})"
+{{#post}}
+
+<main class="container left-container">
+    <div class="row">
+        {{navigation}}
+        
+        <section class="sidebar col-md-5 col-sm-12"
+
+    {{#if image}}
+        style="background-image: url({{image}})"
     {{else}}
         {{#if @blog.cover}}
             style="background-image: url({{@blog.cover}})"
         {{/if}}
     {{/if}}
-{{/if}}
->
+    >
 
     <span class="menu-trigger animated fadeInDown">
       <svg id="LL1" class="cm_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.9 57.1">
@@ -28,3 +32,37 @@
     </span>
     
 </section><!-- end sidebar -->
+
+        <div class="col-md-7 col-sm-12 col-md-offset-5 main-content tags">
+            
+            <div class="sub-nav">
+                <a href="/" class="select-posts">Posts</a>
+                <a href="/tags/" class="select-posts active">Tags</a>
+            </div>
+            
+            <div class="home-page-categories animated fadeIn">
+                <div class="category row">
+                    <section>          
+                        {{#get "tags" include="count.posts"}}
+                        {{#foreach tags}}
+                        <div class="category-preview col-xs-6 col-sm-4 tag">
+                            <a href="{{url}}">
+                            <h2>{{name}}</h2>
+                            {{#if image}}
+                                <div class="tag-bg-image" style="background-image: url('{{image}}');" /></div>
+                            {{else}}
+                                <div class="tag-bg-image" style="background-image: url('/assets/img/cat_empty.png');" /></div>
+                            {{/if}}
+                            </a>
+                        </div>
+                        {{/foreach}}
+                        {{/get}}            
+                    </section>
+                </div>
+            </div>
+        </div><!-- main content -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+{{/post}}

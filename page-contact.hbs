@@ -1,17 +1,21 @@
-<section class="sidebar col-md-5 col-sm-12"
+{{!< default}}
 
-{{#if author.cover}}
-    style="background-image: url({{author.cover}})"
-{{else}}
-    {{#if tag.image}}
-        style="background-image: url({{tag.image}})"
+{{#post}}
+
+<main class="container left-container">
+    <div class="row">
+        {{navigation}}
+        
+        <section class="sidebar col-md-5 col-sm-12"
+
+    {{#if image}}
+        style="background-image: url({{image}})"
     {{else}}
         {{#if @blog.cover}}
             style="background-image: url({{@blog.cover}})"
         {{/if}}
     {{/if}}
-{{/if}}
->
+    >
 
     <span class="menu-trigger animated fadeInDown">
       <svg id="LL1" class="cm_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.9 57.1">
@@ -28,3 +32,36 @@
     </span>
     
 </section><!-- end sidebar -->
+
+
+        <div class="col-md-7 col-sm-12 col-md-offset-5 main-content">
+            <h1>Contact Our Team</h1>
+            
+            <form action="http://github.us13.list-manage.com/subscribe/post" method="POST">
+            <input type="hidden" name="u" value="c8dcee9c5b4b5cfee13965485">
+            <input type="hidden" name="id" value="0a42f3145e">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Jane Doe" class="form-control" name="MERGE1" id="MERGE1" size="25" value="">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="example@email.com" class="form-control" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="text" class="form-control" name="MERGE3" id="MERGE3" size="25" value="" placeholder="Hello, lets chat"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="hidden-from-view" aria-hidden="true"><input type="text" name="b_c8dcee9c5b4b5cfee13965485_0a42f3145e" tabindex="-1" value=""></div>
+                    <input type="submit" class="button" name="submit" class="btn btn-default" type="submit" value="Send">
+                </div>
+            </form>
+        </div><!-- main content -->
+    </div> <!--/row -->
+
+</main> <!-- /container -->
+
+{{/post}}

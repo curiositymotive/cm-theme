@@ -1,0 +1,15 @@
+.category_header {
+
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+
+}
+
+.category-sidebar {
+  .site-info {
+    padding-top: 160px;
+    @include breakpoint(sm) {
+      padding-top: 260px;
+    }
+  }
+}

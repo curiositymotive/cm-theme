@@ -17,6 +17,10 @@ var s,
             // Should include all JS user interactions
             var self = this;
 
+            $('.select-posts,.select-tags').on('click', function () {
+                self.homePostsCatSwitch();
+            });
+
             $('.social-icon').on('click', function(){
                 self.socialIconClick( $(this) );
             });
@@ -34,12 +38,20 @@ var s,
             // Add Bg colour from JS so jPanel has time to initalize
             $('body').css({"background-color":"#333337"});
         },
+        homePostsCatSwitch: function(){
+            // Toggles between showing the categories and posts on the homepage
+            $('.home-page-posts').toggleClass("hide");
+            $('.home-page-tags').toggleClass("hide");
+            $('.select-posts').toggleClass("active");
+            $('.select-tags').toggleClass("active");
+            $('.home-footer').toggleClass("hide");
+        },
         socialIconClick: function(el) {
             // Post page social Icons
             // When Clicked pop up a share dialog
 
             var platform = el.data('platform');
-            var message = el.data('message');
+            var message = el.data('message');a
             var url = el.data('url');
 
             if (platform == 'mail'){
@@ -71,12 +83,12 @@ var s,
 
             s.jpm = $.jPanelMenu({
                 menu : '#menu-target',
-                trigger: '.menu-trigger',
+                trigger: '.menu-trigger, .menu-triggered',
                 animated: false,
-                openPosition: '200px',
+                openPosition: '250px',
                 beforeOpen : ( function() {
                     if (matchMedia('only screen and (min-width: 992px)').matches) {
-                        $('.sidebar').css("left", "200px");
+                        $('.sidebar').css("left", "250px");
                     }
                 }),
                 beforeClose : ( function() {

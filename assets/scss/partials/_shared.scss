@@ -1,0 +1,147 @@
+.metaicon {
+  margin-right: 5px;
+  color: $med-grey;
+}
+
+.meta {
+  color: $light-grey;
+  @include font-size(12);
+  @include breakpoint(md) {
+  @include font-size(14);
+  }
+
+  a {
+    color: $light-grey;
+
+    font-weight: normal;
+    &:hover,
+    &:active {
+      text-decoration: none;
+      color: $text-color;
+      border-bottom: 1px solid $light-grey;
+    }
+  }
+  i {
+    font-style: normal;
+  }
+}
+
+.hidden-from-view { left: -5000px; position: absolute; }
+
+.post-img-full {
+  width: 150%;
+  max-width: 150% !important;
+  margin: 0 -25%;
+  position: relative;
+  display: block;
+}
+
+.post-img-right {
+  float: right;
+  margin: 1em -5% 1em 1.5em;
+}
+
+.post-img-left {
+  float: left;
+  margin: 1em 1.5em 1em -5%;
+}
+
+@media only screen
+  and (max-device-width: 480px) {
+
+  .post-img-right, .post-img-left {
+    float:none;
+    margin:0 0 0 0;
+  }
+
+}
+
+.btn-default {
+  padding: 10px 15px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 0;
+  border-radius: 4px;
+}
+
+.link-spacer {
+  margin: 0 2px 4px 2px;
+  display: inline-block;
+  height: 2px;
+  width: 2px;
+  background-color: $light-grey;
+  border-radius: 100%;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  float: right;
+  border-radius: 50%;
+}
+
+.main-img {
+  display: block;
+
+  .post-icon {
+    display: block;
+    float: right;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    border-radius: 3%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include breakpoint(sm) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include breakpoint(md) {
+      width: 115px;
+      height: 115px;
+    }
+
+    @include breakpoint(lg) {
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+
+.author-page {
+  .post-preview p {
+    margin: 0;
+  }
+}
+
+.tags {
+  hr {
+    margin: 10px auto 20px auto;
+  }
+}
+
+.tag {
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: .6;
+  }
+  h2 {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, .75);
+  }
+
+  .tag-bg-image {
+    width: 100%;
+    height: 165px;
+    padding: 0;
+    margin-right: 25px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}

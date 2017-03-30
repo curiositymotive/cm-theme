@@ -2,26 +2,31 @@
     {{! This is the post loop - each post will be output using this markup }}
     {{#foreach posts}}
     <article class="post {{#if featured}}post--featured{{/if}}">
-      <img src="{{image}}" />
-        <div class="post-preview col-xs-10  no-gutter">
-            <h2><a href="{{url}}">{{title}}</a></h2>
-
-            <p>{{excerpt words="24"}}</p>
+        <div class="post-preview col-xs-9  no-gutter">
+            
+            {{#if meta_title}}
+                <h2><a href="{{url}}">{{meta_title}}</a></h2>
+            {{else}}
+                <h2><a href="{{url}}">{{title}}</a></h2>
+            {{/if}}
+            {{#if meta_description}}
+                <p>{{meta_description}}</p>
+            {{else}}
+                <p>{{excerpt words="28"}}</p>
+            {{/if}}
 
             <p class="meta">
-                {{#author}}
+                <i class="fa fa-bolt metaicon"></i> {{#author}}
                 <a href="{{url}}">{{name}}</a>
                 {{/author}}
                 {{tags prefix=" in "}}
-                <i class="link-spacer"></i>
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM YYYY"}}</time>
             </p>
         </div>
 
         {{#if author.image}}
-        <div class=" col-xs-2  no-gutter">
-            <img src="{{author.image}}" alt="{{author.name}}"class="user-icon user-1" alt="user-image">
-        </div>
+            <div class="col-xs-3 no-gutter main-img">
+                <div style="background-image: url('{{image}}');" class="post-icon user-1" alt="feature-image"></div>
+            </div>
         {{/if}}
     </article>
     {{/foreach}}
