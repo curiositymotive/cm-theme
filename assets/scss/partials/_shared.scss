@@ -147,9 +147,12 @@
 }
 
 .wbline {
+  font-size: 22px;
+  font-size: 2.2rem;
   margin-top: 50px;
   margin-bottom: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   color: #666;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #dcdcdc;
+  text-transform: uppercase;
 }
