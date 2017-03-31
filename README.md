@@ -30,8 +30,9 @@ In this setup, `gulp` will install everything that you need to run Ghost locally
 #### Theme setup
 
 1. If you want to have all images from the live site, pull down the folder from the CM server at `/srv/users/serverpilot/apps/curiositymotive/public/content/images/2017/` and put in your Ghost folder at `~/YOURPATH/cm-theme/node_modules/ghost/content/images/2017/`.
-2. In a text editor, open up `~/YOURPATH/cm-theme/gulp/tasks/symlink.js` and change the `.src('/YOURPATH/WHATEVER/')` path for the theme and images folders to match your local environment.
-3. Run `gulp init` to automatically setup symbolic links.
+2. Grab the `symlink.js` file from [this gist](https://gist.github.com/ff4500/665c2c8124081b46f6fe984ba4be49a3).
+2. In a text editor, open up the `symlink.js` file you downloaded and place into `~/YOURPATH/cm-theme/gulp/tasks/`. Change the `.src('/YOURPATH/WHATEVER/')` path for the theme and images folders to match your local environment.
+3. Run `gulp init` to automatically setup your local symbolic links.
 
 ### Compiling
 Coming soon.
